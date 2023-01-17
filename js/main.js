@@ -7,7 +7,7 @@ function extractRepeated(arr) {
         return a-b
     })
     result=[];
-    var flag=1
+    var flag=1 
     for (let index = 1; index < arr.length; index++) {
       if(arr[index] == arr[index-1]){
         if (flag==1) {
