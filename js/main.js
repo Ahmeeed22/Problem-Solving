@@ -83,3 +83,8 @@ console.log(Math.min.apply(Math,[1,3,5,-6]));
         return result
     }
     console.log(drowHaram(5));
+    var arraynew=[1,3,6,9,22]
+    for (let index = 0; index < arraynew.length; index++) {
+        arraynew[index]=arraynew[index]+2
+    }
+    console.log(arraynew);
