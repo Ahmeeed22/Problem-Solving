@@ -88,3 +88,23 @@ console.log(Math.min.apply(Math,[1,3,5,-6]));
         arraynew[index]=arraynew[index]+2
     }
     console.log(arraynew);
+
+/**
+ *  find the missing letters 
+ *  
+ */ 
+
+function missingLetters(word='abdf'){
+    var charsMissing=[]
+    word=word.toLowerCase()
+    for (let index=1 ; index < word.length; index++){
+        var x ='' ;
+        if (!(word.charCodeAt(index -1)+1 === word.charCodeAt(index))) {
+            x=String.fromCharCode(1+word.charCodeAt(index -1))
+            x? charsMissing.push(x):''
+            word = word.substring(0, index) + x + word.substring(index, word.length);
+        } 
+    }  
+    return charsMissing ; 
+}
+console.log(missingLetters('adf'));
