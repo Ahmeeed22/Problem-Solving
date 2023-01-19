@@ -108,3 +108,14 @@ function missingLetters(word='abdf'){
     return charsMissing ; 
 }
 console.log(missingLetters('adf'));
+
+/**
+ * numbers to reversed array
+ */
+function convertNoToRevArr(no=85983739){
+    var arr =no.toString().split("")
+    // var arr =[...no.toString()] ;
+   return arr.reverse().map(x=> +x);
+}
+console.log(convertNoToRevArr(78943983792));
+
