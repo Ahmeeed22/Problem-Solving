@@ -119,3 +119,26 @@ function convertNoToRevArr(no=85983739){
 }
 console.log(convertNoToRevArr(78943983792));
 
+/**
+ * find longest word in a string
+ */
+function findingLongest(word='hi javascript') {
+// first solution    
+    // var arr=word.split(' ')
+    // var obj={order:0 ,length:0}
+    // for (let index = 0; index < arr.length; index++) {
+    //     if (obj.length<arr[index].length) {
+    //         obj={order:index,length:arr[index].length}
+    //     }
+    // }
+    // console.log(arr[obj.order]);
+
+// second solution    
+    var arr=word.split(' ').reduce((prev,current)=>{
+        return prev.length > current.length ? prev : current ;
+    })
+    console.log(arr);
+}
+findingLongest('hi java script developers') ;
+
+
