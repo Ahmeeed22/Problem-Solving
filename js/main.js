@@ -142,3 +142,21 @@ function findingLongest(word='hi javascript') {
 findingLongest('hi java script developers') ;
 
 
+/**
+ * remove dublicated words from sentence
+ */
+
+function removeDublicate(sentence='hi java script hi'){
+    /*  var sett=new Set(sentence.split(' '));
+        console.log([...sett].join(' ')); 
+    */ 
+    let arr=sentence.split(' ');
+    let newArr=[]
+    for (let index = 0; index < arr.length; index++) {
+        if (newArr.indexOf(arr[index]) === -1) {
+            newArr.push(arr[index])
+        }
+    }
+    console.log(newArr.join(' '));
+}
+removeDublicate('hi java script hi java');
