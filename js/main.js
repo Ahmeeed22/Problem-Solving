@@ -160,3 +160,20 @@ function removeDublicate(sentence='hi java script hi'){
     console.log(newArr.join(' '));
 }
 removeDublicate('hi java script hi java');
+
+/*
+ * Create the function factorial here
+ */
+function factorial(x){
+    let result =1 ;
+    for(let i=x ; i > 0 ;i--){
+          result=result*i
+    }
+    return result ;
+}
+
+function main() {
+    const n = +(readLine());
+    
+    console.log(factorial(n));
+}
