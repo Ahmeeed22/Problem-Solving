@@ -177,3 +177,27 @@ function main() {
     
     console.log(factorial(n));
 }
+
+// setInterval(()=>{
+//     hiA()
+//     console.log("test");
+// },4000)
+
+function hiA(){
+    var pathA=document.getElementById("pathA");
+     pathA.className="hiA";
+     setTimeout(function(){ pathA.className=""; }, 3000);
+    }
+
+/**
+ * that takes a string as an argument and returns the reversed version of the string.
+ * 
+ *  */  
+function reverse(word){
+    var result="";
+    for (let index = word.length; index >0; index--) {
+        result+=word[index-1]
+    }
+    return result
+}  
+console.log(reverse("hello"));
