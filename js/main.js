@@ -201,3 +201,17 @@ function reverse(word){
     return result
 }  
 console.log(reverse("hello"));
+
+
+
+/**
+ * Palindrome word problem
+ */
+function Palindrome(word){
+    var regex = /[!"#$%&'()*+,-./:;<=>?@[\]^_`{|}~ ]/g;
+    var cleanWord = word.replace(regex, '');
+    var result= cleanWord.split('').reverse().join("")
+   return cleanWord===result?true:false
+
+}
+console.log(Palindrome("hee?&*#h"));
