@@ -346,3 +346,20 @@ const myArray =[
   }, {});
   
   console.log(nestedArray); 
+
+
+  /**
+   * longest word at array os string
+   */
+  const longest=['hello',"mom","sister","brother"].reduce((acc,currentValue)=>{
+    return acc.length>currentValue.length ? acc :currentValue
+  })
+  console.log(longest);
+
+  // example ELZERO
+  const finalString=['E',"@","l","z","e","@","r","o"].filter((item)=>{
+    return item!=="@"
+  }).reduce((accu,current)=>{
+    return `${accu}${current}`
+  });
+  console.log(finalString);
