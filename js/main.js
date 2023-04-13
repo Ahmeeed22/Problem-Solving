@@ -178,11 +178,6 @@ function main() {
     console.log(factorial(n));
 }
 
-// setInterval(()=>{
-//     hiA()
-//     console.log("test");
-// },4000)
-
 function hiA(){
     var pathA=document.getElementById("pathA");
      pathA.className="hiA";
@@ -215,3 +210,139 @@ function Palindrome(word){
 
 }
 console.log(Palindrome("hee?&*#h"));
+
+/**
+ * transform an array of objects to a nested array based on a common attribute name 
+ */
+const myArray =[
+    {
+      id: '1',
+      permsGroupId: '1',
+      mainProcessTypeId: '1',
+      mainProcessTypeName: 'Develpment',
+      processTypeId: '1',
+      processTypeName: 'Analysis',
+      mainLevelId: '1',
+      mainLevelName: 'New',
+      levelId: '1',
+      levelName: 'Addition',
+      actionId: '1',
+      actionName: 'Create',
+      checked: 'false',
+    },
+    {
+      id: '1',
+      permsGroupId: '1',
+      mainProcessTypeId: '1',
+      mainProcessTypeName: 'Develpment',
+      processTypeId: '1',
+      processTypeName: 'Analysis',
+      mainLevelId: '1',
+      mainLevelName: 'inProgress',
+      levelId: '1',
+      levelName: 'Addition',
+      actionId: '1',
+      actionName: 'Done',
+      checked: 'false',
+    },
+    {
+      id: '1',
+      permsGroupId: '1',
+      mainProcessTypeId: '1',
+      mainProcessTypeName: 'Develpment',
+      processTypeId: '1',
+      processTypeName: 'Analysis',
+      mainLevelId: '1',
+      mainLevelName: 'Closed',
+      levelId: '1',
+      levelName: 'Addition',
+      actionId: '1',
+      actionName: 'test',
+      checked: 'true',
+    },
+    {
+      id: '1',
+      permsGroupId: '1',
+      mainProcessTypeId: '1',
+      mainProcessTypeName: 'Develpment',
+      processTypeId: '1',
+      processTypeName: 'Analysis',
+      mainLevelId: '1',
+      mainLevelName: 'ToDo',
+      levelId: '1',
+      levelName: 'InPlan',
+      actionId: '1',
+      actionName: 'Start',
+      checked: 'false',
+    },
+    {
+      id: '1',
+      permsGroupId: '1',
+      mainProcessTypeId: '1',
+      mainProcessTypeName: 'Develpment',
+      processTypeId: '1',
+      processTypeName: 'Analysis',
+      mainLevelId: '1',
+      mainLevelName: 'ToDo',
+      levelId: '1',
+      levelName: 'InPlan',
+      actionId: '1',
+      actionName: 'Postpone',
+      checked: 'false',
+    },
+    {
+      id: '1',
+      permsGroupId: '1',
+      mainProcessTypeId: '1',
+      mainProcessTypeName: 'Testing',
+      processTypeId: '1',
+      processTypeName: 'Checking',
+      mainLevelId: '1',
+      mainLevelName: 'New',
+      levelId: '1',
+      levelName: 'Pending',
+      actionId: '1',
+      actionName: 'Create',
+      checked: 'false',
+    },
+    {
+      id: '1',
+      permsGroupId: '1',
+      mainProcessTypeId: '1',
+      mainProcessTypeName: 'Testing',
+      processTypeId: '1',
+      processTypeName: 'Checking',
+      mainLevelId: '1',
+      mainLevelName: 'New',
+      levelId: '1',
+      levelName: 'Approved',
+      actionId: '1',
+      actionName: 'Assign',
+      checked: 'false',
+    },
+
+  ];
+  // return single value from array 
+
+//  example :---
+//
+//   [1,4,7,3].reduce((accumulator,currentValue,index,arrar)=>{
+//     console.log("accumulator",accumulator);
+//     console.log("currentValue",currentValue);
+//     console.log("index",index);
+//     console.log("arrar",arrar);
+//     console.log("accumulator + currentValue = ",accumulator + currentValue);
+//     return accumulator+currentValue
+//   })
+
+
+  const nestedArray = myArray.reduce((accumulator, currentValue) => {
+    const mainLevelName = currentValue.mainLevelName;
+    if (!accumulator[mainLevelName]) {
+      accumulator[mainLevelName] = [];
+    }
+    accumulator[mainLevelName].push(currentValue);
+    return accumulator;
+  }, {});
+  
+  console.log(nestedArray); 
