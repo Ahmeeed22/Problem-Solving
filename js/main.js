@@ -147,9 +147,9 @@ findingLongest('hi java script developers') ;
  */
 
 function removeDublicate(sentence='hi java script hi'){
-    /*  var sett=new Set(sentence.split(' '));
-        console.log([...sett].join(' ')); 
-    */ 
+    /** var sett=new Set(sentence.split(' '));
+     *   console.log([...sett].join(' ')); 
+     */ 
     let arr=sentence.split(' ');
     let newArr=[]
     for (let index = 0; index < arr.length; index++) {
@@ -363,3 +363,22 @@ const myArray =[
     return `${accu}${current}`
   });
   console.log(finalString);
+
+  /**
+   * findDuplicates
+   *@param {object} main - The main array.
+   *@returns {object} The array of duplicates.
+   */
+  function findDuplicates(arr=[1, 2, 3, 2, 4, 3]){
+    var newArr=[];
+    var duplicateItems=[]
+    for (let index = 0; index < arr.length; index++) {
+      if (newArr.indexOf(arr[index]) ==-1) {
+        newArr.push(arr[index])
+      }else{
+        duplicateItems.push(arr[index])
+      } 
+    }
+    return duplicateItems ;
+  }
+  console.log(findDuplicates());
